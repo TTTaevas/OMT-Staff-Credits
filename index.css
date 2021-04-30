@@ -1,0 +1,38 @@
+body {
+	font-family: Arial;
+	font-size: 20px;
+	background-image: linear-gradient(#F2C271, #FAB43F);
+	color: #271C1C;
+	text-align: center;
+}
+
+.staff_role {
+	margin-bottom: 40px;
+}
+
+h2 {
+	text-transform: capitalize;
+}
+
+.member {
+	margin: 0px 0px 10px 0px;
+}
+
+a {
+	background-color: #271C1C;
+	color: #D3A04C;
+	position: relative;
+	display: inline-block;
+	padding-right: 222px;
+}
+
+a img {
+	width: 80px;
+	margin: 4px 10px 0px 4px;
+}
+
+a span {
+	position: absolute;
+	top: 35%;
+	right: 10%;
+}

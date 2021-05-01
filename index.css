@@ -1,9 +1,20 @@
 body {
 	font-family: Arial;
 	font-size: 20px;
-	background-image: linear-gradient(#F2C271, #FAB43F);
-	color: #271C1C;
 	text-align: center;
+	color: #271C1C;
+	background-color: #271C1C;
+	margin: 0px 200px 0px 200px;
+}
+
+#center {
+	background-color: #FFCC66;
+}
+
+@media screen and (max-width: 900px) {
+	body {
+		margin: 0px;
+	}
 }
 
 .staff_role {
@@ -16,6 +27,16 @@ h2 {
 
 .member {
 	margin: 0px 0px 10px 0px;
+}
+
+.first h2 {
+	margin-top: 0px;
+	padding-top: 24.9px; 
+}
+
+.last {
+	margin-bottom: 0px;
+	padding-bottom: 40px;
 }
 
 a {

@@ -55,6 +55,9 @@ function createWebpage() {
 		div.id = staff_roles[i][0]
 		div.className = "staff_role"
 
+		if (i == 0) {div.className += " first"}
+		if (i == staff_roles.length - 1) {div.className += " last"}
+
 		let div_heading = document.createElement("h2")
 		div_heading.innerHTML = staff_roles[i][0]
 
@@ -74,6 +77,6 @@ function createWebpage() {
 			div.appendChild(member)
 		}
 
-		document.body.appendChild(div)
+		document.getElementById("center").appendChild(div)
 	}
 }

@@ -1,11 +1,11 @@
 # OMT-Staff-Credits
 
-This is a website for displaying a list of staffs in an osu! tournament called Orang's Mini Tournament June 2021.
+This is a website for displaying a list of staffs in an osu! tournament called Orange's Mini Tournament June 2021.
 
 Forum post:
 
 To do:
-- [ ] Change Site icon on top bar
+- [x] Change Site icon on top bar
 - [ ] Search feature: By staff name
 - [ ] Search feature: By roles
 - [ ] Search feature: By osu! userID

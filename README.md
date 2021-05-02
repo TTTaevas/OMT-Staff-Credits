@@ -11,5 +11,5 @@ To do:
 - [ ] Search feature: By osu! userID
 - [x] Add another background behind the orange background, for OMT bur background image purpose
 - [x] Narrow the orange background to focus more at the center of the site
-- [ ] Move staff name closer to the avatar
+- [x] Move staff name closer to the avatar
 - [ ] Make the staff "cards" more fancy (haven't thought deeply yet)

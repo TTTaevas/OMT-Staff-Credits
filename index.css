@@ -49,13 +49,19 @@ a {
 	padding-right: 222px;
 }
 
-a img {
+.pfp {
 	width: 80px;
 	margin: 4px 10px 0px 4px;
+}
+
+.flag {
+	position: absolute;
+	top: 25%;
+	right: 2%;
 }
 
 a span {
 	position: absolute;
 	top: 35%;
-	right: 10%;
+	left: 30%;
 }

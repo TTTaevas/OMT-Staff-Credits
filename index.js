@@ -15,16 +15,14 @@ function createWebpage() {
 
 	const users = [
 		{
-			"username": "Orange_",
-			"id": "14272323",
+			"username": "Orange_", "id": "14272323", "country": "US",
 			"roles": [
 				"host",
 				"admin"
 			]
 		},
 		{
-			"username": "rock-on",
-			"id": "9676089",
+			"username": "rock-on", "id": "9676089", "country": "VN",
 			"roles": [
 				"admin",
 				"sheeter",
@@ -32,8 +30,7 @@ function createWebpage() {
 			]
 		},
 		{
-			"username": "dahammer88",
-			"id": "10733055",
+			"username": "dahammer88", "id": "10733055", "country": "CA",
 			"roles": [
 				"referee",
 				"pooler"
@@ -72,7 +69,8 @@ function createWebpage() {
 
 			let member_image = `https://a.ppy.sh/${members[e].id}`
 			let member_profile = `https://osu.ppy.sh/users/${members[e].id}`
-			member.innerHTML = `<a href=${member_profile} target="_blank"><img src=${member_image}><span>${members[e].username}</span></a>`
+			let member_flag = `https://osu.ppy.sh/images/flags/${members[e].country}.png`
+			member.innerHTML = `<a href=${member_profile} target="_blank"><img class="pfp" src=${member_image}><span>${members[e].username}</span><img class="flag" src=${member_flag}></a>`
 
 			div.appendChild(member)
 		}

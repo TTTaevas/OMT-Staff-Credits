@@ -2,13 +2,14 @@ body {
 	font-family: Arial;
 	font-size: 20px;
 	text-align: center;
-	color: #271C1C;
-	background-color: #271C1C;
+	color: #FFCC66;
+	background-color: #FFCC66;
+	background-image: url("background.png");
 	margin: 0px 200px 0px 200px;
 }
 
 #center {
-	background-color: #FFCC66;
+	background-color: #271C1C;
 }
 
 @media screen and (max-width: 900px) {
@@ -40,8 +41,9 @@ h2 {
 }
 
 a {
-	background-color: #271C1C;
-	color: #D3A04C;
+	background-color: #FFCC66;
+	color: #271C1C;
+	font-weight: bold;
 	position: relative;
 	display: inline-block;
 	padding-right: 222px;

@@ -9,8 +9,7 @@ function createWebpage() {
 		["referee", []],
 		["streamer", []],
 		["commentator", []],
-		["replayer", []],
-		["playtester", []]
+		["replayer", []]
 	]
 
 	const users = [
@@ -47,33 +46,46 @@ function createWebpage() {
 		}
 	}
 
-	for (let i = 0; i < staff_roles.length; i++) {
+	for (let i = 0; i < users.length; i++) {
+		let user = users[i]
+		let user_image = `https://a.ppy.sh/${user.id}`
+		let user_profile = `https://osu.ppy.sh/users/${user.id}`
+		let user_flag = `https://osu.ppy.sh/images/flags/${user.country}.png`
+
 		let div = document.createElement("div")
-		div.id = staff_roles[i][0]
-		div.className = "staff_role"
+		div.id = i
+		div.className = `user ${user.roles[0]}`
 
 		if (i == 0) {div.className += " first"}
-		if (i == staff_roles.length - 1) {div.className += " last"}
+		if (i == users.length - 1) {div.className += " last"}
 
-		let div_heading = document.createElement("h2")
-		div_heading.innerHTML = staff_roles[i][0]
-
-		let members = staff_roles[i][1]
-
-		if (members.length > 1) {div_heading.innerHTML += "s"}
-		div.appendChild(div_heading)
-
-		for (let e = 0; e < members.length; e++) {
-			let member = document.createElement("div")
-			member.className = "member"
-
-			let member_image = `https://a.ppy.sh/${members[e].id}`
-			let member_profile = `https://osu.ppy.sh/users/${members[e].id}`
-			let member_flag = `https://osu.ppy.sh/images/flags/${members[e].country}.png`
-			member.innerHTML = `<a href=${member_profile} target="_blank"><img class="pfp" src=${member_image}><span>${members[e].username}</span><img class="flag" src=${member_flag}></a>`
-
-			div.appendChild(member)
+		let head_of_card = document.createElement("table")
+		let hb_tbdy = document.createElement("tbody")
+		head_of_card.className = "card_head"
+		head_of_card.onclick = function() {
+			let cards = document.getElementsByClassName("card_body")
+			for (let a = 0; a < cards.length; a++) {
+				a == i ? cards[a].style.display == "none" ? cards[a].style.display = "inline-block" : cards[a].style.display = "none" : cards[a].style.display = "none"
+			}
 		}
+
+		hb_tbdy.innerHTML = `<tr><th rowspan="2"><img class="pfp" src=${user_image}></th><td class="username">${user.username}</td></tr><tr><td class="flag_holder"><img class="flag" src="${user_flag}"></td></tr>`
+		head_of_card.appendChild(hb_tbdy)
+
+		let body_of_card = document.createElement("table")
+		let cb_tbdy = document.createElement("tbody")
+		body_of_card.className = "card_body"
+		body_of_card.style.display = "none"
+
+		for (let e = 0; e < user.roles.length; e++) {
+			cb_tbdy.innerHTML += `<tr><td class="role">${user.roles[e]}</td></tr>`
+		}
+
+		cb_tbdy.innerHTML += `<tr><th><a href="${user_profile}" target="_blank">Profile link</th></tr>`
+		body_of_card.appendChild(cb_tbdy)
+
+		head_of_card.appendChild(body_of_card)
+		div.appendChild(head_of_card)
 
 		document.getElementById("center").appendChild(div)
 	}

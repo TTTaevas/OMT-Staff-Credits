@@ -1,5 +1,15 @@
+@font-face {
+	font-family: "Torus Regular";
+	src: url("./Torus-Regular.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "Torus SemiBold";
+	src: url("./Torus-SemiBold.otf") format("opentype");
+}
+
 body {
-	font-family: Arial;
+	font-family: "Torus Regular", Arial;
 	font-size: 20px;
 	text-align: center;
 	color: #FFCC66;
@@ -9,7 +19,9 @@ body {
 }
 
 #center {
+	display: inline-block;
 	background-color: #271C1C;
+	height: 100vh;
 }
 
 @media screen and (max-width: 900px) {
@@ -18,50 +30,54 @@ body {
 	}
 }
 
-.staff_role {
-	margin-bottom: 40px;
+.user {
+	margin: 20px;
+	width: 400px;
+	border-radius: 10%;
 }
 
-h2 {
-	text-transform: capitalize;
-}
-
-.member {
-	margin: 0px 0px 10px 0px;
-}
-
-.first h2 {
-	margin-top: 0px;
-	padding-top: 24.9px; 
-}
-
-.last {
-	margin-bottom: 0px;
-	padding-bottom: 40px;
-}
-
-a {
+.card_head {
+	font-family: "Torus SemiBold", Arial;
+	font-size: 33px;
+	display: inline-block;
+	width: 100%;
+	border-radius: 25px;
 	background-color: #FFCC66;
 	color: #271C1C;
-	font-weight: bold;
-	position: relative;
-	display: inline-block;
-	padding-right: 222px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.username {
+	padding-top: 20px;
 }
 
 .pfp {
-	width: 80px;
-	margin: 4px 10px 0px 4px;
+	max-height: 120px;
+	width: 80%;
+	margin-top: 10px;
+	border-radius: 25%;
+}
+
+
+.flag_holder {
+	padding-bottom: 30px
 }
 
 .flag {
-	position: absolute;
-	top: 25%;
-	right: 2%;
+	width: 40px;
+	float: left;
 }
 
-a span {
-	position: absolute;
-	top: 35%;
-	left: 30%;
+.card_body {
+	text-align: center;
+}
+
+.role {
+	text-transform: capitalize;
+}
+
+a {
+	color: #271C1C;
+	font-weight: normal;
 }

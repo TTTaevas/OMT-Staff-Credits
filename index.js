@@ -34,6 +34,24 @@ function createWebpage() {
 				"referee",
 				"pooler"
 			]
+		},
+		{
+			"username": "rocking-on", "id": "9676089", "country": "VN",
+			"roles": [
+				"admin",
+				"sheeter",
+				"pooler",
+				"referee",
+				"streamer",
+				"commentator",
+				"replayer"
+			]
+		},
+		{
+			"username": "rock-in", "id": "9676089", "country": "VN",
+			"roles": [
+				"replayer"
+			]
 		}
 	]
 	// YOU CAN MODIFY THE STUFF ABOVE
@@ -62,31 +80,35 @@ function createWebpage() {
 		let head_of_card = document.createElement("table")
 		let hb_tbdy = document.createElement("tbody")
 		head_of_card.className = "card_head"
-		head_of_card.onclick = function() {
-			let cards = document.getElementsByClassName("card_body")
-			for (let a = 0; a < cards.length; a++) {
-				a == i ? cards[a].style.display == "none" ? cards[a].style.display = "inline-block" : cards[a].style.display = "none" : cards[a].style.display = "none"
-			}
-		}
 
 		hb_tbdy.innerHTML = `<tr><th rowspan="2"><img class="pfp" src=${user_image}></th>
 		<td class="username">${user.username}</td></tr>
 		<tr><td class="flag_holder"><img class="flag" src="${user_flag}"><div class="primary_role">${user.roles[0]}</div></td></tr>`
+
 		head_of_card.appendChild(hb_tbdy)
 
-		let body_of_card = document.createElement("table")
-		let cb_tbdy = document.createElement("tbody")
-		body_of_card.className = "card_body"
-		body_of_card.style.display = "none"
+		if (user.roles.length > 1) {
 
-		for (let e = 0; e < user.roles.length; e++) {
-			cb_tbdy.innerHTML += `<tr><td class="role">${user.roles[e]}</td></tr>`
+			let table = document.createElement("table")
+			table.className = "roles"
+			let row = table.insertRow(-1)
+
+
+			let count = 0
+			for (let e = 1; e < user.roles.length; e++) {
+				count += user.roles[e].length
+				if (count > 27) {
+					row = table.insertRow(-1)
+					count = 0 + user.roles[e].length
+				}
+				let cell = row.insertCell(-1)
+				cell.innerHTML = `<div class="secondary_role">${user.roles[e]}</div></td></tr>`
+			}
+
+			head_of_card.appendChild(table)
+
 		}
 
-		cb_tbdy.innerHTML += `<tr><th><a href="${user_profile}" target="_blank">Profile link</th></tr>`
-		body_of_card.appendChild(cb_tbdy)
-
-		head_of_card.appendChild(body_of_card)
 		div.appendChild(head_of_card)
 
 		document.getElementById("center").appendChild(div)

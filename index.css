@@ -24,12 +24,6 @@ body {
 	height: 100vh;
 }
 
-@media screen and (max-width: 900px) {
-	body {
-		margin: 0px;
-	}
-}
-
 .user {
 	margin: 20px;
 	width: 400px;
@@ -50,6 +44,7 @@ body {
 
 .username {
 	padding-top: 20px;
+	float: left;
 }
 
 .pfp {
@@ -63,12 +58,25 @@ body {
 
 
 .flag_holder {
-	padding-bottom: 30px
+	padding-bottom: 30px;
+	font-size: 20px;
+	float: left;
 }
 
 .flag {
 	width: 40px;
 	float: left;
+	margin-right: 10px;
+}
+
+.primary_role {
+	margin-left: 60px;
+	margin-top: 0px;
+	padding: 0px 10px 4px 10px;
+	background-color: #271C1C;
+	color: #FFCC66;
+	text-transform: capitalize;
+	border-radius: 20px;
 }
 
 .card_body {

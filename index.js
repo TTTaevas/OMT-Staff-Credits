@@ -69,7 +69,9 @@ function createWebpage() {
 			}
 		}
 
-		hb_tbdy.innerHTML = `<tr><th rowspan="2"><img class="pfp" src=${user_image}></th><td class="username">${user.username}</td></tr><tr><td class="flag_holder"><img class="flag" src="${user_flag}"></td></tr>`
+		hb_tbdy.innerHTML = `<tr><th rowspan="2"><img class="pfp" src=${user_image}></th>
+		<td class="username">${user.username}</td></tr>
+		<tr><td class="flag_holder"><img class="flag" src="${user_flag}"><div class="primary_role">${user.roles[0]}</div></td></tr>`
 		head_of_card.appendChild(hb_tbdy)
 
 		let body_of_card = document.createElement("table")

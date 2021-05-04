@@ -95,6 +95,13 @@ body {
 }
 
 a {
+	display: block;
+	background-color: #FEAB37;
 	color: #271C1C;
+	border-radius: 0px 0px 25px 25px;
+	height: 25px;
+	padding: 8px 0px;
 	font-weight: normal;
+	font-size: 20px;
+	text-decoration: none;
 }

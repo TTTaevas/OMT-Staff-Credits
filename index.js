@@ -105,7 +105,6 @@ function createWebpage() {
 			let user_roles = sortRoles(staff_roles, user.roles)
 
 			let div = document.createElement("div")
-			div.id = e
 			div.className = `user ${user.roles[0]}`
 
 			let card = document.createElement("table")
@@ -139,8 +138,13 @@ function createWebpage() {
 
 			}
 
-			div.appendChild(card)
+			let profile_link = document.createElement("a")
+			profile_link.innerHTML = "Visit Profile"
+			profile_link.setAttribute("href", user_profile)
+			profile_link.setAttribute("target", "_blank")
+			card.appendChild(profile_link)
 
+			div.appendChild(card)
 			document.getElementById("center").appendChild(div)
 		}
 	}

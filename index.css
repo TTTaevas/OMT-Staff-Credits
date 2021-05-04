@@ -1,11 +1,11 @@
 @font-face {
 	font-family: "Torus Regular";
-	src: url("./Torus-Regular.otf") format("opentype");
+	src: url("./fonts/Torus-Regular.otf") format("opentype");
 }
 
 @font-face {
 	font-family: "Torus SemiBold";
-	src: url("./Torus-SemiBold.otf") format("opentype");
+	src: url("./fonts/Torus-SemiBold.otf") format("opentype");
 }
 
 body {
@@ -14,7 +14,7 @@ body {
 	text-align: center;
 	color: #FFCC66;
 	background-color: #FFCC66;
-	background-image: url("background.png");
+	background-image: url("./images/background.png");
 	margin: 0px 200px 0px 200px;
 }
 
@@ -30,7 +30,7 @@ body {
 	border-radius: 10%;
 }
 
-.card_head {
+.card {
 	font-family: "Torus SemiBold", Arial;
 	font-size: 33px;
 	display: inline-block;
@@ -55,8 +55,7 @@ body {
 	border-radius: 25%;
 }
 
-
-.flag_holder {
+.below_username {
 	padding-bottom: 30px;
 	font-size: 20px;
 	float: left;

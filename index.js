@@ -103,25 +103,21 @@ function createWebpage() {
 		div.id = i
 		div.className = `user ${user.roles[0]}`
 
-		if (i == 0) {div.className += " first"}
-		if (i == users.length - 1) {div.className += " last"}
+		let card = document.createElement("table")
+		let card_tbdy = document.createElement("tbody")
+		card.className = "card"
 
-		let head_of_card = document.createElement("table")
-		let hb_tbdy = document.createElement("tbody")
-		head_of_card.className = "card_head"
-
-		hb_tbdy.innerHTML = `<tr><th rowspan="2"><img class="pfp" src=${user_image}></th>
+		card_tbdy.innerHTML = `<tr><th rowspan="2"><img class="pfp" src=${user_image}></th>
 		<td class="username">${user.username}</td></tr>
-		<tr><td class="flag_holder"><img class="flag" src="${user_flag}"><div class="primary_role">${user.roles[0]}</div></td></tr>`
+		<tr><td class="below_username"><img class="flag" src="${user_flag}"><div class="primary_role">${user.roles[0]}</div></td></tr>`
 
-		head_of_card.appendChild(hb_tbdy)
+		card.appendChild(card_tbdy)
 
 		if (user.roles.length > 1) {
 
 			let table = document.createElement("table")
 			table.className = "roles"
 			let row = table.insertRow(-1)
-
 
 			let count = 0
 			for (let e = 1; e < user.roles.length; e++) {
@@ -134,11 +130,11 @@ function createWebpage() {
 				cell.innerHTML = `<div class="secondary_role">${user.roles[e]}</div></td></tr>`
 			}
 
-			head_of_card.appendChild(table)
+			card.appendChild(table)
 
 		}
 
-		div.appendChild(head_of_card)
+		div.appendChild(card)
 
 		document.getElementById("center").appendChild(div)
 	}

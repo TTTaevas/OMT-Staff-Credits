@@ -13,3 +13,5 @@ To do:
 - [x] Narrow the orange background to focus more at the center of the site
 - [x] Move staff name closer to the avatar
 - [x] Make the staff "cards" more fancy (haven't thought deeply yet)
+
+and yes, let's all love Lain!

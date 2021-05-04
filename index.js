@@ -9,7 +9,7 @@ function createWebpage() {
 		["referee", []],
 		["streamer", []],
 		["commentator", []],
-		["replayer", []]
+		["playtester", []]
 	]
 
 	const users = [
@@ -44,13 +44,42 @@ function createWebpage() {
 				"referee",
 				"streamer",
 				"commentator",
-				"replayer"
+				"playtester"
 			]
 		},
 		{
 			"username": "rock-in", "id": "9676089", "country": "VN",
 			"roles": [
-				"replayer"
+				"playtester"
+			]
+		},
+		{
+			"username": "GaryWombo", "id": "11076988", "country": "CA",
+			"roles": [
+				"admin",
+				"pooler"
+			]
+		},
+		{
+			"username": "TipanLogic", "id": "11720624", "country": "RU",
+			"roles": [
+				"referee",
+				"streamer"
+			]
+		},
+		{
+			"username": "unicornlover", "id": "13179722", "country": "AU",
+			"roles": [
+				"pooler",
+				"referee",
+				"playtester"
+			]
+		},
+		{
+			"username": "- Elias -", "id": "12865368", "country": "PH",
+			"roles": [
+				"referee",
+				"streamer"
 			]
 		}
 	]

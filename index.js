@@ -105,38 +105,70 @@ function createWebpage() {
 			let user_roles = sortRoles(staff_roles, user.roles)
 
 			let div = document.createElement("div")
-			div.className = `user ${user.roles[0]}`
+			div.className = `user ${user_roles[0][0]}`
 
 			let card = document.createElement("table")
-			let card_tbdy = document.createElement("tbody")
 			card.className = "card"
 
-			card_tbdy.innerHTML = `<tr><th rowspan="2"><img class="pfp" src=${user_image}></th>
-			<td class="username">${user.username}</td></tr>
-			<tr><td class="below_username"><img class="flag" src="${user_flag}"><div class="primary_role">${user_roles[0]}</div></td></tr>`
 
-			card.appendChild(card_tbdy)
+			let first_row = card.insertRow(-1)
 
-			if (user.roles.length > 1) {
+			let pfp = first_row.insertCell(-1)
+			pfp.rowSpan = 2
+			pfp.innerHTML = `<img class="pfp" src=${user_image}>`
 
-				let table = document.createElement("table")
-				table.className = "roles"
-				let row = table.insertRow(-1)
+			let username = first_row.insertCell(-1)
+			username.className = "username"
+			username.innerHTML = user.username
 
-				let count = 0
-				for (let o = 1; o < user_roles.length; o++) {
-					count += user_roles[o].length
+
+			let table = document.createElement("table")
+			table.className = "roles"
+			let row = table.insertRow(-1)
+
+			let count = 0 // For secondary roles
+			for (let o = 0; o < user_roles.length; o++) {
+				if (o == 0) { // Primary role
+
+					let second_row = card.insertRow(-1)
+
+					let below_username = second_row.insertCell(-1)
+					below_username.className = "below_username"
+
+					let flag = document.createElement("img")
+					flag.className = "flag"
+					flag.src = user_flag
+					below_username.appendChild(flag)
+
+					let primary_role = document.createElement("div")
+					primary_role.className = "primary_role"
+					primary_role.style.color = user_roles[0][1][0]
+					primary_role.style.backgroundColor = user_roles[0][1][1]
+					primary_role.innerHTML = user_roles[0][0]
+					below_username.appendChild(primary_role)
+
+				} else { // Secondary role
+
+					count += user_roles[o][0].length
 					if (count > 27) {
 						row = table.insertRow(-1)
-						count = 0 + user.roles[o].length
+						count = 0 + user_roles[o][0].length
 					}
+
 					let cell = row.insertCell(-1)
-					cell.innerHTML = `<div class="secondary_role">${user_roles[o]}</div></td></tr>`	
+
+					let secondary_role = document.createElement("div")
+					secondary_role.className = "secondary_role"
+					secondary_role.style.color = user_roles[o][1][0]
+					secondary_role.style.backgroundColor = user_roles[o][1][1]
+					secondary_role.innerHTML = user_roles[o][0]
+
+					cell.appendChild(secondary_role)
+
 				}
-
-				card.appendChild(table)
-
 			}
+
+			card.appendChild(table)
 
 			let profile_link = document.createElement("a")
 			profile_link.innerHTML = "Visit Profile"
@@ -155,7 +187,7 @@ function sortRoles(staff_roles, user_roles) {
 	for (let i = 0; i < staff_roles.length; i++) {
 		for (let e = 0; e < user_roles.length; e++) {
 			if (staff_roles[i][0] == user_roles[e]) {
-				roles.push(user_roles[e])
+				roles.push([user_roles[e], staff_roles[i][1]])
 			}
 		}
 	}

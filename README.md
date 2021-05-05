@@ -6,13 +6,11 @@ Forum post:
 
 To do:
 - [x] Change Site icon on top bar
-- [ ] Search feature: By staff name
-- [ ] Search feature: By roles
-- [ ] Search feature: By osu! userID
+- [ ] Add role sorting with checkmars
 - [x] Add another background behind the orange background, for OMT bur background image purpose
 - [x] Narrow the orange background to focus more at the center of the site
 - [x] Move staff name closer to the avatar
 - [x] Make the staff "cards" more fancy (haven't thought deeply yet)
-- [ ] Show more cards horizontally
+- [x] Show more cards horizontally
 
 and yes, let's all love Lain!

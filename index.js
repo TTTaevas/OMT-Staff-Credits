@@ -36,24 +36,6 @@ function createWebpage() {
 			]
 		},
 		{
-			"username": "rocking-on", "id": "9676089", "country": "VN",
-			"roles": [
-				"admin",
-				"sheeter",
-				"pooler",
-				"referee",
-				"streamer",
-				"commentator",
-				"playtester"
-			]
-		},
-		{
-			"username": "rock-in", "id": "9676089", "country": "VN",
-			"roles": [
-				"playtester"
-			]
-		},
-		{
 			"username": "GaryWombo", "id": "11076988", "country": "CA",
 			"roles": [
 				"admin",

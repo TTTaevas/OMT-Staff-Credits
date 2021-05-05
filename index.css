@@ -25,6 +25,7 @@ body {
 }
 
 .user {
+	display: inline-flex;
 	margin: 20px;
 	width: 430px;
 	border-radius: 10%;
@@ -43,13 +44,13 @@ body {
 
 .username {
 	padding-top: 20px;
+	margin-right: 8px;
 	float: left;
 }
 
 .pfp {
 	height: 96px;
 	width: 96px;
-	margin-top: 8px;
 	margin-right: 10px;
 	margin-left: 10px;
 	border-radius: 25%;
@@ -57,6 +58,7 @@ body {
 
 .below_username {
 	padding-bottom: 30px;
+	margin-right: 8px;
 	font-size: 20px;
 	float: left;
 }
@@ -104,4 +106,16 @@ a {
 	font-weight: normal;
 	font-size: 20px;
 	text-decoration: none;
+}
+
+@media screen and (max-width: 1281px) {
+	.user {
+		width: auto;
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	body {
+		margin: 0px;
+	}
 }

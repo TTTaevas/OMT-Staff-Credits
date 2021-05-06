@@ -103,12 +103,9 @@ function createWebpage() {
 			username.className = "username"
 			username.innerHTML = user.username
 
+			let roles = document.createElement("div") // Secondary roles container
+			roles.className = "roles"
 
-			let table = document.createElement("table")
-			table.className = "roles"
-			let row = table.insertRow(-1)
-
-			let count = 0 // For secondary roles
 			for (let o = 0; o < user_roles.length; o++) {
 				if (o == 0) { // Primary role
 
@@ -131,26 +128,18 @@ function createWebpage() {
 
 				} else { // Secondary role
 
-					count += user_roles[o][0].length
-					if (count > 27) {
-						row = table.insertRow(-1)
-						count = 0 + user_roles[o][0].length
-					}
-
-					let cell = row.insertCell(-1)
-
 					let secondary_role = document.createElement("div")
 					secondary_role.className = "secondary_role"
 					secondary_role.style.color = user_roles[o][1][0]
 					secondary_role.style.backgroundColor = user_roles[o][1][1]
 					secondary_role.innerHTML = user_roles[o][0]
 
-					cell.appendChild(secondary_role)
+					roles.appendChild(secondary_role)
 
 				}
 			}
 
-			card.appendChild(table)
+			card.appendChild(roles)
 
 			let profile_link = document.createElement("a")
 			profile_link.innerHTML = "Visit Profile"

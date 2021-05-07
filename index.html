@@ -7,12 +7,36 @@
 		<link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
 		<link rel="stylesheet" type="text/css" href="./index.css">
 		<script type="text/javascript" src="./index.js"></script>
+		<script type="text/javascript">
+			function dealWithCards() {
+				let checkboxes = document.getElementsByTagName("input")
+				let cards = document.getElementsByClassName("card")
+				for (let i = 0; i < cards.length; i++) {
+					let roles = [cards[i].getElementsByClassName("primary_role")[0].innerHTML]
+					for (let e = 0; e < cards[i].getElementsByClassName("secondary_role").length; e++) {
+						roles.push(cards[i].getElementsByClassName("secondary_role")[e].innerHTML)
+					}
+
+					let to_show = false
+					for (let e = 0; e < roles.length; e++) {
+						for (let u = 0; u < checkboxes.length; u++) {
+							if (roles[e] == checkboxes[u].id && checkboxes[u].checked) {
+								to_show = true
+								e = roles.length
+							}
+						}
+					}
+					cards[i].parentElement.style.display = to_show ? "inline-block" : "none"
+				}
+			}
+		</script>
 	</head>
 	<body onload="createWebpage()">
 		<div id="center">
 			<div id="upper">
 				<h1>Orange's Mini Tournament June 2021</h1>
 				<h4>Staff credits</h4>
+				<div id="checkboxes" onchange="dealWithCards()"></div>
 			</div>
 		</div>
 	</body>

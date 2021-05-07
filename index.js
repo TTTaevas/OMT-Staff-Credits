@@ -79,6 +79,19 @@ function createWebpage() {
 	}
 
 	for (let i = 0; i < staff_roles.length; i++) {
+
+		let checkbox = document.createElement("input")
+		checkbox.id = staff_roles[i][0]
+		checkbox.setAttribute("type", "checkbox")
+		checkbox.checked = true
+
+		let checkbox_label = document.createElement("label")
+		checkbox_label.setAttribute("for", staff_roles[i][0])
+		checkbox_label.innerHTML = `${staff_roles[i][0]}s`
+
+		document.getElementById("checkboxes").appendChild(checkbox)
+		document.getElementById("checkboxes").appendChild(checkbox_label)
+
 		for (let e = 0; e < staff_roles[i][2].length; e++) {
 			let user = staff_roles[i][2][e]
 			let user_image = `https://a.ppy.sh/${user.id}`
@@ -87,14 +100,12 @@ function createWebpage() {
 			let user_roles = sortRoles(staff_roles, user.roles)
 
 			let div = document.createElement("div")
-			div.className = `user ${user_roles[0][0]}`
+			div.className = `user`
 
 			let card = document.createElement("table")
 			card.className = "card"
 
-
 			let first_row = card.insertRow(-1)
-
 			let pfp = first_row.insertCell(-1)
 			pfp.rowSpan = 2
 			pfp.innerHTML = `<img class="pfp" src=${user_image}>`
@@ -150,7 +161,13 @@ function createWebpage() {
 			div.appendChild(card)
 			document.getElementById("center").appendChild(div)
 		}
+
 	}
+
+	let footer = document.createElement("p")
+	footer.innerHTML = `Webpage by <a href="https://github.com/TTTaevas" target="_blank">Taevas</a><br>
+	With the ideas and help of <a href="https://github.com/AcezukyRO" target="_blank">rock-on</a> and <a href="https://github.com/lmnyx" target="_blank">Mikhail</a>`
+	document.getElementById("center").appendChild(footer)
 }
 
 function sortRoles(staff_roles, user_roles) {

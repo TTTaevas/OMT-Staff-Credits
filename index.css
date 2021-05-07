@@ -32,6 +32,14 @@ h4 {
 	margin-top: 15px;
 }
 
+input {
+	margin-left: 5px;
+}
+
+label {
+	margin-right: 5px;
+}
+
 .user {
 	display: inline-flex;
 	margin: 20px;
@@ -107,7 +115,7 @@ h4 {
 	border-radius: 20px;
 }
 
-a {
+table a {
 	display: block;
 	background-color: #FEAB37;
 	color: #271C1C;
@@ -136,4 +144,12 @@ a {
 	body {
 		margin: 0px;
 	}
+}
+
+p {
+	font-size: 17px;
+}
+
+p a {
+	color: #FFCC66;
 }

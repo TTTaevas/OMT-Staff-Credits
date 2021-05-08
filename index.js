@@ -3,13 +3,13 @@ function createWebpage() {
 	// YOU CAN MODIFY THE STUFF BELOW
 	const staff_roles = [
 		["host", ["#FFCC66", "#271C1C"], []],
-		["admin", ["#FFCC66", "#741b47"], []],
-		["sheeter", ["#FFCC66", "#b45f06"], []],
-		["pooler", ["#FFCC66", "#1155CC"], []],
-		["referee", ["#FFCC66", "#38761D"], []],
-		["streamer", ["#FFCC66", "#bf9000"], []],
-		["commentator", ["#FFCC66", "#990000"], []],
-		["playtester", ["#FFCC66", "#0b5394"], []]
+		["admin", ["#FFCC66", "#4c1130"], []],
+		["sheeter", ["#FFCC66", "#783f04"], []],
+		["pooler", ["#FFCC66", "#1c4587"], []],
+		["referee", ["#FFCC66", "#274e13"], []],
+		["streamer", ["#FFCC66", "#7f6000"], []],
+		["commentator", ["#FFCC66", "#660000"], []],
+		["playtester", ["#FFCC66", "#073763"], []]
 	]
 
 	const users = [

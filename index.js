@@ -4,7 +4,7 @@ function createWebpage() {
 	const staff_roles = [
 		["host", ["#FFCC66", "#271C1C"], []],
 		["admin", ["#FFCC66", "#271C1C"], []],
-		["sheeter", ["#FFCC66", "#271C1C"], []],
+		["sheeter", ["#FFCC66", "#045200"], []],
 		["pooler", ["#FFCC66", "#271C1C"], []],
 		["referee", ["#FFCC66", "#271C1C"], []],
 		["streamer", ["#FFCC66", "#271C1C"], []],

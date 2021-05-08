@@ -18,6 +18,15 @@ body {
 	margin: 0px 200px 0px 200px;
 }
 
+#upper {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.checkbox {
+	display: inline-block;
+}
+
 #center {
 	display: inline-block;
 	background-color: #271C1C;

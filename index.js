@@ -80,6 +80,9 @@ function createWebpage() {
 
 	for (let i = 0; i < staff_roles.length; i++) {
 
+		let group = document.createElement("div")
+		group.className = "checkbox"
+
 		let checkbox = document.createElement("input")
 		checkbox.id = staff_roles[i][0]
 		checkbox.setAttribute("type", "checkbox")
@@ -89,8 +92,9 @@ function createWebpage() {
 		checkbox_label.setAttribute("for", staff_roles[i][0])
 		checkbox_label.innerHTML = `${staff_roles[i][0]}s`
 
-		document.getElementById("checkboxes").appendChild(checkbox)
-		document.getElementById("checkboxes").appendChild(checkbox_label)
+		group.appendChild(checkbox)
+		group.appendChild(checkbox_label)
+		document.getElementById("checkboxes").appendChild(group)
 
 		for (let e = 0; e < staff_roles[i][2].length; e++) {
 			let user = staff_roles[i][2][e]

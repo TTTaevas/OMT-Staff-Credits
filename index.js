@@ -129,10 +129,11 @@ function createWebpage() {
 	// YOU CAN MODIFY THE STUFF ABOVE
 
 	for (let i = 0; i < users.length; i++) {
-		for (let e = 0; e < users[i].roles.length; e++) {
-			for (let o = 0; o < staff_roles.length; o++) {
+		for (let o = 0; o < staff_roles.length; o++) {
+			for (let e = 0; e < users[i].roles.length; e++) {
 				if (users[i].roles[e] == staff_roles[o][0]) {
 					staff_roles[o][2].push(users[i])
+					o = staff_roles.length
 					e = users[i].roles.length
 				}
 			}

@@ -214,7 +214,7 @@ function createWebpage() {
 				}
 			}
 
-			card.appendChild(roles)
+			if (user_roles.length > 1) {card.appendChild(roles)}
 
 			let profile_link = document.createElement("a")
 			profile_link.innerHTML = "Visit Profile"

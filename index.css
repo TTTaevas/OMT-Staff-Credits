@@ -67,6 +67,11 @@ label {
 	text-align: center;
 }
 
+tbody {
+	display: block;
+	height: 115px;
+}
+
 .username {
 	padding-top: 20px;
 	margin-right: 8px;
@@ -77,7 +82,8 @@ label {
 	height: 96px;
 	width: 96px;
 	margin-right: 10px;
-	margin-left: 10px;
+	margin-left: 8px;
+	padding-bottom: 4px;
 	border-radius: 25%;
 }
 
@@ -95,7 +101,7 @@ label {
 }
 
 .primary_role {
-	margin-left: 60px;
+	margin-left: 54px;
 	margin-top: 0px;
 	border: 3px solid black;
 	padding: 0px 17px 4px 17px;
@@ -108,9 +114,8 @@ label {
 
 .roles {
 	text-align: left;
-	margin-left: 10px;
-	margin-right: 10px;
-	margin-bottom: 10px;
+	margin-left: 6px;
+	margin-right: 6px;
 }
 
 .secondary_role {
@@ -120,7 +125,7 @@ label {
 	margin-right: 9px;
 	border: 3px solid black;
 	font-size: 20px;
-	padding: 0px 7px 4px 7px;
+	padding: 0px 10px 4px 10px;
 	line-height: 18px;
 	background-color: #271C1C;
 	color: #FFCC66;
@@ -141,6 +146,10 @@ table a {
 }
 
 @media screen and (max-width: 500px) {
+	.card {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
 	.user {
 		margin-left: auto;
 		margin-right: auto;

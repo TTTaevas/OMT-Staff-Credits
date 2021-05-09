@@ -2,14 +2,14 @@ function createWebpage() {
 
 	// YOU CAN MODIFY THE STUFF BELOW
 	const staff_roles = [
-		["host", ["#FFCC66", "#271C1C"], []],
-		["admin", ["#FFCC66", "#4c1130"], []],
-		["sheeter", ["#FFCC66", "#783f04"], []],
-		["pooler", ["#FFCC66", "#1c4587"], []],
-		["referee", ["#FFCC66", "#274e13"], []],
-		["streamer", ["#FFCC66", "#7f6000"], []],
-		["commentator", ["#FFCC66", "#660000"], []],
-		["playtester", ["#FFCC66", "#073763"], []]
+		["host", "#271C1C", []],
+		["admin", "#A64D79", []],
+		["sheeter", "#E69138", []],
+		["pooler", "#3C78D8", []],
+		["referee", "#6AA84F", []],
+		["streamer", "#CC0000", []],
+		["commentator", "#BF9000", []],
+		["playtester", "#3D85C6", []]
 	]
 
 	const users = [
@@ -136,8 +136,7 @@ function createWebpage() {
 
 					let primary_role = document.createElement("div")
 					primary_role.className = "primary_role"
-					primary_role.style.color = user_roles[0][1][0]
-					primary_role.style.backgroundColor = user_roles[0][1][1]
+					primary_role.style.borderColor = user_roles[0][1]
 					primary_role.innerHTML = user_roles[0][0]
 					below_username.appendChild(primary_role)
 
@@ -145,7 +144,7 @@ function createWebpage() {
 
 					let secondary_role = document.createElement("div")
 					secondary_role.className = "secondary_role"
-					secondary_role.style.color = user_roles[o][1][0]
+					secondary_role.style.borderColor = user_roles[o][1]
 					secondary_role.style.backgroundColor = user_roles[o][1][1]
 					secondary_role.innerHTML = user_roles[o][0]
 

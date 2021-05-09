@@ -29,16 +29,22 @@ function createWebpage() {
 			]
 		},
 		{
-			"username": "dahammer88", "id": "10733055", "country": "CA",
+			"username": "GaryWombo", "id": "11076988", "country": "CA",
 			"roles": [
-				"referee",
+				"admin",
 				"pooler"
 			]
 		},
 		{
-			"username": "GaryWombo", "id": "11076988", "country": "CA",
+			"username": "YesImSatan", "id": "14373729", "country": "SK",
 			"roles": [
-				"admin",
+				"streamer"
+			]
+		},
+		{
+			"username": "dahammer88", "id": "10733055", "country": "CA",
+			"roles": [
+				"referee",
 				"pooler"
 			]
 		},
@@ -54,7 +60,7 @@ function createWebpage() {
 			"roles": [
 				"pooler",
 				"referee",
-				"playtester"
+				"commentator"
 			]
 		},
 		{
@@ -62,6 +68,61 @@ function createWebpage() {
 			"roles": [
 				"referee",
 				"streamer"
+			]
+		},
+		{
+			"username": "kirintili", "id": "9286008", "country": "ES",
+			"roles": [
+				"pooler",
+				"commentator"
+			]
+		},
+		{
+			"username": "xSweeet", "id": "14279904", "country": "GT",
+			"roles": [
+				"referee"
+			]
+		},
+		{
+			"username": "L3XiCbh", "id": "14309415", "country": "CA",
+			"roles": [
+				"streamer",
+				"commentator"
+			]
+		},
+		{
+			"username": "EL2G3", "id": "8616507", "country": "PH",
+			"roles": [
+				"commentator"
+			]
+		},
+		{
+			"username": "Geag", "id": "16052525", "country": "US",
+			"roles": [
+				"commentator"
+			]
+		},
+		{
+			"username": "Juztan", "id": "14272451", "country": "US",
+			"roles": [
+				"referee",
+				"pooler",
+				"streamer",
+				"commentator"
+			]
+		},
+		{
+			"username": "easypeasy123", "id": "9946406", "country": "US",
+			"roles": [
+				"referee",
+				"pooler"
+			]
+		},
+		{
+			"username": "willerkiller", "id": "13710647", "country": "US",
+			"roles": [
+				"referee",
+				"commentator"
 			]
 		}
 	]

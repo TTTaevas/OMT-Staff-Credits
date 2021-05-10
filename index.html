@@ -12,17 +12,15 @@
 				let checkboxes = document.getElementsByTagName("input")
 				let cards = document.getElementsByClassName("card")
 				for (let i = 0; i < cards.length; i++) {
-					let roles = [cards[i].getElementsByClassName("primary_role")[0].innerHTML]
-					for (let e = 0; e < cards[i].getElementsByClassName("secondary_role").length; e++) {
-						roles.push(cards[i].getElementsByClassName("secondary_role")[e].innerHTML)
-					}
+					let user_roles = [cards[i].getElementsByClassName("primary_role")[0].innerHTML]
+					Array.from(cards[i].getElementsByClassName("secondary_role")).forEach(role => user_roles.push(role.innerHTML))
 
 					let to_show = false
-					for (let e = 0; e < roles.length; e++) {
+					for (let e = 0; e < user_roles.length; e++) {
 						for (let u = 0; u < checkboxes.length; u++) {
-							if (roles[e] == checkboxes[u].id && checkboxes[u].checked) {
+							if (user_roles[e] == checkboxes[u].id && checkboxes[u].checked) {
 								to_show = true
-								e = roles.length
+								e = user_roles.length
 							}
 						}
 					}

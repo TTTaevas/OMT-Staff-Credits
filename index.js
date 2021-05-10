@@ -1,15 +1,15 @@
 function createWebpage() {
 
 	// YOU CAN MODIFY THE STUFF BELOW
-	const staff_roles = [
-		["host", "#271C1C", []],
-		["admin", "#A64D79", []],
-		["sheeter", "#E69138", []],
-		["pooler", "#3C78D8", []],
-		["referee", "#6AA84F", []],
-		["streamer", "#CC0000", []],
-		["commentator", "#BF9000", []],
-		["playtester", "#3D85C6", []]
+	const roles = [ // THE VALUE OF "users" MUST BE AN EMPTY ARRAY
+		{"name": "host", "color": "#271C1C", "users": []},
+		{"name": "admin", "color": "#A64D79", "users": []},
+		{"name": "sheeter", "color": "#E69138", "users": []},
+		{"name": "pooler", "color": "#3C78D8", "users": []},
+		{"name": "referee", "color": "#6AA84F", "users": []},
+		{"name": "streamer", "color": "#CC0000", "users": []},
+		{"name": "commentator", "color": "#BF9000", "users": []},
+		{"name": "playtester", "color": "#3D85C6", "users": []}
 	]
 
 	const users = [
@@ -128,49 +128,62 @@ function createWebpage() {
 	]
 	// YOU CAN MODIFY THE STUFF ABOVE
 
+
+	// CARD SORTING
 	for (let i = 0; i < users.length; i++) {
-		for (let o = 0; o < staff_roles.length; o++) {
-			for (let e = 0; e < users[i].roles.length; e++) {
-				if (users[i].roles[e] == staff_roles[o][0]) {
-					staff_roles[o][2].push(users[i])
-					o = staff_roles.length
-					e = users[i].roles.length
+		for (let e = 0; e < roles.length; e++) {
+			for (let o = 0; o < users[i].roles.length; o++) {
+				if (users[i].roles[o] == roles[e].name) {
+					roles[e].users.push(users[i])
+					e = roles.length
+					o = users[i].roles.length
 				}
 			}
 		}
 	}
+	// CARD SORTING
 
-	for (let i = 0; i < staff_roles.length; i++) {
 
-		let group = document.createElement("div")
-		group.className = "checkbox"
+	for (let i = 0; i < roles.length; i++) {
 
-		let checkbox = document.createElement("input")
-		checkbox.id = staff_roles[i][0]
-		checkbox.setAttribute("type", "checkbox")
-		checkbox.checked = true
+		// CHECKBOXES ADDING
+		let c_group = document.createElement("div")
+		c_group.className = "checkbox"
 
-		let checkbox_label = document.createElement("label")
-		checkbox_label.setAttribute("for", staff_roles[i][0])
-		checkbox_label.innerHTML = `${staff_roles[i][0]}s`
+		let c_checkbox = document.createElement("input")
+		c_checkbox.id = roles[i].name
+		c_checkbox.setAttribute("type", "checkbox")
+		c_checkbox.checked = true
 
-		group.appendChild(checkbox)
-		group.appendChild(checkbox_label)
-		document.getElementById("checkboxes").appendChild(group)
+		let c_label = document.createElement("label")
+		c_label.setAttribute("for", roles[i].name)
+		c_label.innerHTML = `${roles[i].name}s`
 
-		for (let e = 0; e < staff_roles[i][2].length; e++) {
-			let user = staff_roles[i][2][e]
+		c_group.appendChild(c_checkbox)
+		c_group.appendChild(c_label)
+		document.getElementById("checkboxes").appendChild(c_group)
+		// CHECKBOXES ADDING
+
+
+		// START CARD CREATION
+		for (let e = 0; e < roles[i].users.length; e++) {
+
+			// FONDATIONS
+			let user = roles[i].users[e]
 			let user_image = `https://a.ppy.sh/${user.id}`
 			let user_profile = `https://osu.ppy.sh/users/${user.id}`
 			let user_flag = `https://osu.ppy.sh/images/flags/${user.country}.png`
-			let user_roles = sortRoles(staff_roles, user.roles)
+			let user_roles = sortRoles(roles, user.roles)
 
-			let div = document.createElement("div")
-			div.className = `user`
+			let user_div = document.createElement("div")
+			user_div.className = `user`
 
 			let card = document.createElement("table")
 			card.className = "card"
+			// FONDATIONS
 
+
+			// FIRST ROW
 			let first_row = card.insertRow(-1)
 			let pfp = first_row.insertCell(-1)
 			pfp.rowSpan = 2
@@ -179,70 +192,85 @@ function createWebpage() {
 			let username = first_row.insertCell(-1)
 			username.className = "username"
 			username.innerHTML = user.username
+			// FIRST ROW
 
-			let roles = document.createElement("div") // Secondary roles container
-			roles.className = "roles"
 
-			for (let o = 0; o < user_roles.length; o++) {
-				if (o == 0) { // Primary role
+			// SECOND ROW
+			let second_row = card.insertRow(-1)
+			let below_username = second_row.insertCell(-1)
+			below_username.className = "below_username"
 
-					let second_row = card.insertRow(-1)
+			let flag = document.createElement("img")
+			flag.className = "flag"
+			flag.src = user_flag
+			below_username.appendChild(flag)
 
-					let below_username = second_row.insertCell(-1)
-					below_username.className = "below_username"
+			let primary_role = document.createElement("div")
+			primary_role.className = "primary_role"
+			primary_role.style.borderColor = user_roles[0][1]
+			primary_role.innerHTML = user_roles[0][0]
+			below_username.appendChild(primary_role)
+			// SECOND ROW
 
-					let flag = document.createElement("img")
-					flag.className = "flag"
-					flag.src = user_flag
-					below_username.appendChild(flag)
 
-					let primary_role = document.createElement("div")
-					primary_role.className = "primary_role"
-					primary_role.style.borderColor = user_roles[0][1]
-					primary_role.innerHTML = user_roles[0][0]
-					below_username.appendChild(primary_role)
+			// SECONDARY ROLES
+			if (user_roles.length > 1) {
+				let roles_div = document.createElement("div") // Secondary roles container
+				roles_div.className = "roles"
 
-				} else { // Secondary role
-
+				for (let o = 1; o < user_roles.length; o++) {
 					let secondary_role = document.createElement("div")
 					secondary_role.className = "secondary_role"
 					secondary_role.style.borderColor = user_roles[o][1]
-					secondary_role.style.backgroundColor = user_roles[o][1][1]
 					secondary_role.innerHTML = user_roles[o][0]
-
-					roles.appendChild(secondary_role)
-
+					roles_div.appendChild(secondary_role)
 				}
+
+				card.appendChild(roles_div)
 			}
+			// SECONDARY ROLES
 
-			if (user_roles.length > 1) {card.appendChild(roles)}
 
+			// PROFILE BUTTON
 			let profile_link = document.createElement("a")
 			profile_link.innerHTML = "Visit Profile"
 			profile_link.setAttribute("href", user_profile)
 			profile_link.setAttribute("target", "_blank")
 			card.appendChild(profile_link)
+			// PROFILE BUTTON
 
-			div.appendChild(card)
-			document.getElementById("center").appendChild(div)
+
+			// FINISH CARD CREATION
+			user_div.appendChild(card)
+			document.getElementById("center").appendChild(user_div)
+			// FINISH CARD CREATION
+			
 		}
+		// START CARD CREATION
 
 	}
 
+	// CREDITS
 	let footer = document.createElement("p")
 	footer.innerHTML = `Webpage by <a href="https://github.com/TTTaevas" target="_blank">Taevas</a><br>
-	With the ideas and help of <a href="https://github.com/AcezukyRO" target="_blank">rock-on</a> and <a href="https://github.com/lmnyx" target="_blank">Mikhail</a>`
+	With the ideas and help of <a href="https://github.com/AcezukyRO" target="_blank">rock-on</a> and <a href="https://github.com/lmnyx" target="_blank">Mikhail</a>
+	<br>Thank you for your support <3`
 	document.getElementById("center").appendChild(footer)
+	// CREDITS
+
 }
 
-function sortRoles(staff_roles, user_roles) {
-	let roles = []
-	for (let i = 0; i < staff_roles.length; i++) {
+
+// SORTING ROLES OF A USER
+function sortRoles(roles, user_roles) {
+	let arr = []
+	for (let i = 0; i < roles.length; i++) {
 		for (let e = 0; e < user_roles.length; e++) {
-			if (staff_roles[i][0] == user_roles[e]) {
-				roles.push([user_roles[e], staff_roles[i][1]])
+			if (roles[i].name == user_roles[e]) {
+				arr.push([user_roles[e], roles[i].color])
 			}
 		}
 	}
-	return roles
+	return arr
 }
+// SORTING ROLES OF A USER

@@ -175,8 +175,8 @@ function createWebpage() {
 			let user_flag = `https://osu.ppy.sh/images/flags/${user.country}.png`
 			let user_roles = sortRoles(roles, user.roles)
 
-			let user_div = document.createElement("div")
-			user_div.className = `user`
+			let card_container = document.createElement("div")
+			card_container.className = `card_container`
 
 			let card = document.createElement("table")
 			card.className = "card"
@@ -241,8 +241,8 @@ function createWebpage() {
 
 
 			// FINISH CARD CREATION
-			user_div.appendChild(card)
-			document.getElementById("center").appendChild(user_div)
+			card_container.appendChild(card)
+			document.getElementById("center").appendChild(card_container)
 			// FINISH CARD CREATION
 			
 		}

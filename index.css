@@ -18,19 +18,15 @@ body {
 	margin: 0px 200px 0px 200px;
 }
 
-#upper {
-	margin-left: 20px;
-	margin-right: 20px;
-}
-
-.checkbox {
-	display: inline-block;
-}
-
 #center {
 	display: inline-block;
 	background-color: #271C1C;
 	min-height: 100vh;
+}
+
+#upper {
+	margin-left: 20px;
+	margin-right: 20px;
 }
 
 h1 {
@@ -41,15 +37,13 @@ h4 {
 	margin-top: 15px;
 }
 
-input {
+.checkbox {
+	display: inline-block;
 	margin-left: 5px;
-}
-
-label {
 	margin-right: 5px;
 }
 
-.user {
+.card_container {
 	display: inline-flex;
 	margin: 20px;
 	width: 430px;
@@ -72,12 +66,6 @@ tbody {
 	height: 115px;
 }
 
-.username {
-	padding-top: 20px;
-	margin-right: 8px;
-	float: left;
-}
-
 .pfp {
 	height: 96px;
 	width: 96px;
@@ -85,6 +73,12 @@ tbody {
 	margin-left: 8px;
 	padding-bottom: 4px;
 	border-radius: 25%;
+}
+
+.username {
+	padding-top: 20px;
+	margin-right: 8px;
+	float: left;
 }
 
 .below_username {
@@ -145,22 +139,14 @@ table a {
 	text-decoration: none;
 }
 
-@media screen and (max-width: 500px) {
-	.card {
-		margin-left: 10px;
-		margin-right: 10px;
-	}
-	.user {
-		margin-left: auto;
-		margin-right: auto;
-	}
+p {
+	font-size: 17px;
 }
 
-@media screen and (max-width: 1281px) {
-	.user {
-		width: auto;
-	}
+p a {
+	color: #FFCC66;
 }
+
 
 @media screen and (max-width: 1400px) {
 	body {
@@ -168,10 +154,20 @@ table a {
 	}
 }
 
-p {
-	font-size: 17px;
+@media screen and (max-width: 1281px) {
+	.card_container {
+		width: auto;
+	}
 }
 
-p a {
-	color: #FFCC66;
+@media screen and (max-width: 600px) {
+	.card_container {
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+	}
+	.card {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
 }

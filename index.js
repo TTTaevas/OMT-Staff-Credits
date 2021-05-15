@@ -51,8 +51,8 @@ function createWebpage() {
 		{
 			"username": "TipanLogic", "id": "11720624", "country": "RU",
 			"roles": [
-				"referee",
-				"streamer"
+				"streamer",
+				"referee"
 			]
 		},
 		{
@@ -66,8 +66,8 @@ function createWebpage() {
 		{
 			"username": "- Elias -", "id": "12865368", "country": "PH",
 			"roles": [
-				"referee",
-				"streamer"
+				"streamer",
+				"referee"
 			]
 		},
 		{
@@ -114,15 +114,15 @@ function createWebpage() {
 		{
 			"username": "easypeasy123", "id": "9946406", "country": "US",
 			"roles": [
-				"referee",
-				"pooler"
+				"pooler",
+				"referee"
 			]
 		},
 		{
 			"username": "willerkiller", "id": "13710647", "country": "US",
 			"roles": [
-				"referee",
-				"commentator"
+				"commentator",
+				"referee"
 			]
 		},
 		{

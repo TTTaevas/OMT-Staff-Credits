@@ -124,6 +124,12 @@ function createWebpage() {
 				"referee",
 				"commentator"
 			]
+		},
+		{
+			"username": "cg505", "id": "11634481", "country": "US",
+			"roles": [
+				"referee"
+			]
 		}
 	]
 	// YOU CAN MODIFY THE STUFF ABOVE

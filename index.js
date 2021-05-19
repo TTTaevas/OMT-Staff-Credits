@@ -149,8 +149,22 @@ function createWebpage() {
 	}
 	// CARD SORTING
 
+	// STATS ADDING, PART 1
+	let stats = document.getElementById("stats")
+	let all_counter = document.createElement("p")
+	all_counter.id = "all_counter"
+	all_counter.innerHTML = `ALL: ${users.length}`
+	stats.appendChild(all_counter)
+	// STATS ADDING, PART 1
 
 	for (let i = 0; i < roles.length; i++) {
+
+		// STATS ADDING, PART 2
+		let counter = document.createElement("p")
+		counter.id = `${roles[i].name}_counter`
+		counter.innerHTML = `${roles[i].name.toUpperCase()}S: 0`
+		stats.appendChild(counter)
+		// STATS ADDING, PART 2
 
 		// CHECKBOXES ADDING
 		let c_group = document.createElement("div")
@@ -163,7 +177,7 @@ function createWebpage() {
 
 		let c_label = document.createElement("label")
 		c_label.setAttribute("for", roles[i].name)
-		c_label.innerHTML = `${roles[i].name}s`
+		c_label.innerHTML = `${roles[i].name.toUpperCase()}S: SHOWN`
 
 		c_group.appendChild(c_checkbox)
 		c_group.appendChild(c_label)
@@ -255,6 +269,36 @@ function createWebpage() {
 		// START CARD CREATION
 
 	}
+
+
+	// STATS ADDING, PART 3
+	for (let i = 0; i < users.length; i++) {
+		for (let e = 0; e < users[i].roles.length; e++) {
+			let role = users[i].roles[e]
+			let paragraph = document.getElementById(`${role}_counter`)
+			let count = Number(paragraph.innerHTML.slice(-1))
+			count++
+			paragraph.innerHTML = `${paragraph.innerHTML.slice(0, -2)} ${count}`
+		}
+	}
+	// STATS ADDING, PART 3
+
+	let checkboxes = document.getElementsByClassName('checkbox')
+	for (let i = 0; i < checkboxes.length; i++) {
+		checkboxes[i].onclick = function() {
+			if (this.firstElementChild.checked) {
+				this.style.backgroundColor = ""
+				this.style.color = ""
+				this.lastElementChild.innerHTML = `${this.lastElementChild.htmlFor.toUpperCase()}S: SHOWN`
+			} else {
+				this.style.backgroundColor = "#FFCC66"
+				this.style.color = "black"
+				this.lastElementChild.innerHTML = `${this.lastElementChild.htmlFor.toUpperCase()}S: HIDDEN`
+			}
+			event.stopPropagation();
+		}
+	}
+
 
 	// CREDITS
 	let footer = document.createElement("p")

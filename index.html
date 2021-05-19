@@ -30,11 +30,26 @@
 		</script>
 	</head>
 	<body onload="createWebpage()">
+		<div id="left"> <!-- style="display: none;" -->
+			<div id="nav_bar_toggle" onclick="document.getElementById('nav_bar').style.display = 'table'">
+				<p>options</p>
+			</div>
+			<table id="nav_bar" width="100%">
+				<tbody>
+					<tr id="stats"></tr>
+					<tr id="checkboxes" onchange="dealWithCards()"></tr>
+				</tbody>
+			</table>
+			<script type="text/javascript">
+				document.getElementById('nav_bar').onclick = function() {
+					document.getElementById('nav_bar').style.display = 'none'
+				}
+			</script>
+		</div>
 		<div id="center">
 			<div id="upper">
 				<h1>Orange's Mini Tournament June 2021</h1>
 				<h4>Staff credits</h4>
-				<div id="checkboxes" onchange="dealWithCards()"></div>
 			</div>
 		</div>
 	</body>

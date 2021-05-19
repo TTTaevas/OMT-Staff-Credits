@@ -15,13 +15,62 @@ body {
 	color: #FFCC66;
 	background-color: #FFCC66;
 	background-image: url("./images/background.png");
-	margin: 0px 200px 0px 200px;
+	margin: 0px;
+}
+
+#nav_bar_toggle {
+	position: fixed;
+	top: 10%;
+	cursor: pointer;
+	background-color: #140D04;
+	border: 2px solid;
+	border-left: 0px none;
+}
+
+#nav_bar_toggle p {
+	margin: 0px 10px;
+}
+
+#nav_bar {
+	display: none;
+	overflow-y: auto;
+	height: 100%;
+	width: 300px;
+	position: fixed;
+	background-color: #140D04;
+	border-right: 2px solid;
+}
+
+#stats p, .checkbox {
+	display: block;
+	margin: 10px;
+	border: 2px solid;
+}
+
+#stats p {
+	border-radius: 20px;
+}
+
+input {
+	display: none;
+}
+
+.checkbox:hover {
+	color: black;
+	background-color: #FFCC66;
+}
+
+label {
+	display: block;
+	width: 100%;
+	cursor: pointer;
 }
 
 #center {
 	display: inline-block;
 	background-color: #271C1C;
 	min-height: 100vh;
+	margin: 0px 200px 0px 200px;
 }
 
 #upper {
@@ -35,12 +84,6 @@ h1 {
 
 h4 {
 	margin-top: 15px;
-}
-
-.checkbox {
-	display: inline-block;
-	margin-left: 5px;
-	margin-right: 5px;
 }
 
 .card_container {
@@ -61,7 +104,7 @@ h4 {
 	text-align: center;
 }
 
-tbody {
+.card tbody {
 	display: block;
 	height: 115px;
 }
@@ -139,17 +182,17 @@ table a {
 	text-decoration: none;
 }
 
-p {
+#center p {
 	font-size: 17px;
 }
 
-p a {
+#center p a {
 	color: #FFCC66;
 }
 
 
 @media screen and (max-width: 1400px) {
-	body {
+	#center {
 		margin: 0px;
 	}
 }
@@ -169,5 +212,21 @@ p a {
 	.card {
 		margin-left: 10px;
 		margin-right: 10px;
+	}
+	#nav_bar_toggle {
+		top: 17%;
+	}
+}
+
+@media screen and (max-width: 374px) {
+	.card {
+		margin-left: 1%;
+		margin-right: 1%;
+	}
+}
+
+@media screen and (max-height: 650px) {
+	#stats p, .checkbox {
+		margin: 2px;
 	}
 }

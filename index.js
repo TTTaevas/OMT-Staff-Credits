@@ -166,9 +166,22 @@ function createWebpage() {
 		stats.appendChild(counter)
 		// STATS ADDING, PART 2
 
+
 		// CHECKBOXES ADDING
 		let c_group = document.createElement("div")
 		c_group.className = "checkbox"
+		c_group.onclick = function() {
+			if (this.firstElementChild.checked) {
+				this.style.backgroundColor = ""
+				this.style.color = ""
+				this.lastElementChild.innerHTML = `${this.lastElementChild.htmlFor.toUpperCase()}S: SHOWN`
+			} else {
+				this.style.backgroundColor = "#FFCC66"
+				this.style.color = "black"
+				this.lastElementChild.innerHTML = `${this.lastElementChild.htmlFor.toUpperCase()}S: HIDDEN`
+			}
+			event.stopPropagation();
+		}
 
 		let c_checkbox = document.createElement("input")
 		c_checkbox.id = roles[i].name
@@ -282,22 +295,6 @@ function createWebpage() {
 		}
 	}
 	// STATS ADDING, PART 3
-
-	let checkboxes = document.getElementsByClassName('checkbox')
-	for (let i = 0; i < checkboxes.length; i++) {
-		checkboxes[i].onclick = function() {
-			if (this.firstElementChild.checked) {
-				this.style.backgroundColor = ""
-				this.style.color = ""
-				this.lastElementChild.innerHTML = `${this.lastElementChild.htmlFor.toUpperCase()}S: SHOWN`
-			} else {
-				this.style.backgroundColor = "#FFCC66"
-				this.style.color = "black"
-				this.lastElementChild.innerHTML = `${this.lastElementChild.htmlFor.toUpperCase()}S: HIDDEN`
-			}
-			event.stopPropagation();
-		}
-	}
 
 
 	// CREDITS

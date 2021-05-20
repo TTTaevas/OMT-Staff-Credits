@@ -32,10 +32,18 @@
 			function hideShowNavbar() {
 				if (document.getElementById('nav_bar').style.display == 'none') {
 					document.getElementById('nav_bar').style.display = 'table'
-					if (window.innerWidth > 400) document.getElementById('nav_bar_toggle').style.marginLeft = "300px"
+					if (window.innerWidth > 400) {
+						document.getElementById('nav_bar_toggle').style.marginLeft = "300px"
+						if (window.innerWidth > 1400) {
+							document.getElementById('center').style.marginLeft = "500px"
+						} else if (window.innerWidth > 1000) {
+							document.getElementById('center').style.marginLeft = "300px"
+						}
+					}
 				} else {
 					document.getElementById('nav_bar').style.display = 'none'
 					document.getElementById('nav_bar_toggle').style.marginLeft = "0px"
+					document.getElementById('center').style.marginLeft = ""
 				}
 			}
 		</script>

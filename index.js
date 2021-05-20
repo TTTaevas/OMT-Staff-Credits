@@ -193,8 +193,8 @@ function createWebpage() {
 				this.style.color = ""
 				this.lastElementChild.innerHTML = `${this.lastElementChild.htmlFor.toUpperCase()}S: SHOWN`
 			} else {
-				this.style.backgroundColor = "#FFCC66"
-				this.style.color = "black"
+				this.style.backgroundColor = "black"
+				this.style.color = "#FFCC66"
 				this.lastElementChild.innerHTML = `${this.lastElementChild.htmlFor.toUpperCase()}S: HIDDEN`
 			}
 			event.stopPropagation();

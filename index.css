@@ -47,6 +47,11 @@ body {
 	border: 2px solid;
 }
 
+.checkbox {
+	color: black;
+	background-color: #FFCC66;
+}
+
 .all_button {
 	color: #FEAB37;
 }
@@ -60,8 +65,7 @@ input {
 }
 
 .checkbox:hover, .all_button:hover {
-	color: black;
-	background-color: #FFCC66;
+	font-size: 110%;
 }
 
 label {

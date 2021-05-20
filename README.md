@@ -5,9 +5,6 @@ This is a website for displaying a list of staffs in an osu! tournament called O
 Forum post: https://osu.ppy.sh/community/forums/topics/1325451
 
 To-do list:
-- [ ] Add "All" button to toggle all the role display checkboxes
-- [x] Add Navigation bar on the left, move all checkboxes and "all" button to the navigation bar in vertical
-- [x] Add role counter and add to the navigation bar
-- [x] Add a toggle to open and hide the navigation bar 
+- [ ] Add button to close navbar
 
 and yes, let's all love Lain!

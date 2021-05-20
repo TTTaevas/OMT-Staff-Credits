@@ -41,10 +41,14 @@ body {
 	border-right: 2px solid;
 }
 
-#stats p, .checkbox {
+#stats p, .checkbox, .all_button {
 	display: block;
 	margin: 10px;
 	border: 2px solid;
+}
+
+.all_button {
+	color: #FEAB37;
 }
 
 #stats p {
@@ -55,7 +59,7 @@ input {
 	display: none;
 }
 
-.checkbox:hover {
+.checkbox:hover, .all_button:hover {
 	color: black;
 	background-color: #FFCC66;
 }
@@ -225,8 +229,9 @@ table a {
 	}
 }
 
-@media screen and (max-height: 650px) {
-	#stats p, .checkbox {
-		margin: 2px;
+@media screen and (max-height: 750px) {
+	#stats p, .checkbox, .all_button {
+		margin: 2%;
+		font-size: 90%;
 	}
 }

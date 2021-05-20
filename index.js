@@ -149,25 +149,42 @@ function createWebpage() {
 	}
 	// CARD SORTING
 
-	// STATS ADDING, PART 1
-	let stats = document.getElementById("stats")
+
+	// STATS ADDING, PART 1/3
 	let all_counter = document.createElement("p")
 	all_counter.id = "all_counter"
 	all_counter.innerHTML = `ALL: ${users.length}`
-	stats.appendChild(all_counter)
-	// STATS ADDING, PART 1
+	document.getElementById("stats").appendChild(all_counter)
+	// STATS ADDING, PART 1/3
+
+
+	// CHECKBOXES ADDING, PART 1/3
+	let show_button = document.createElement("div")
+	show_button.className = "all_button"
+	show_button.onclick = function() {
+		check(document.getElementsByClassName('checkbox'))
+		event.stopPropagation();
+	}
+
+	let show_button_label = document.createElement("label")
+	show_button_label.innerHTML = `SHOW ALL`
+
+	show_button.appendChild(show_button_label)
+	document.getElementById("buttons").appendChild(show_button)
+	// CHECKBOXES ADDING, PART 1/3
+
 
 	for (let i = 0; i < roles.length; i++) {
 
-		// STATS ADDING, PART 2
+		// STATS ADDING, PART 2/3
 		let counter = document.createElement("p")
 		counter.id = `${roles[i].name}_counter`
 		counter.innerHTML = `${roles[i].name.toUpperCase()}S: 0`
-		stats.appendChild(counter)
-		// STATS ADDING, PART 2
+		document.getElementById("stats").appendChild(counter)
+		// STATS ADDING, PART 2/3
 
 
-		// CHECKBOXES ADDING
+		// CHECKBOXES ADDING, PART 2/3
 		let c_group = document.createElement("div")
 		c_group.className = "checkbox"
 		c_group.onclick = function() {
@@ -195,7 +212,7 @@ function createWebpage() {
 		c_group.appendChild(c_checkbox)
 		c_group.appendChild(c_label)
 		document.getElementById("checkboxes").appendChild(c_group)
-		// CHECKBOXES ADDING
+		// CHECKBOXES ADDING, PART 2/3
 
 
 		// START CARD CREATION
@@ -284,7 +301,7 @@ function createWebpage() {
 	}
 
 
-	// STATS ADDING, PART 3
+	// STATS ADDING, PART 3/3
 	for (let i = 0; i < users.length; i++) {
 		for (let e = 0; e < users[i].roles.length; e++) {
 			let role = users[i].roles[e]
@@ -294,7 +311,23 @@ function createWebpage() {
 			paragraph.innerHTML = `${paragraph.innerHTML.slice(0, -2)} ${count}`
 		}
 	}
-	// STATS ADDING, PART 3
+	// STATS ADDING, PART 3/3
+
+
+	// CHECKBOXES ADDING, PART 3/3
+	let hide_button = document.createElement("div")
+	hide_button.className = "all_button"
+	hide_button.onclick = function() {
+		uncheck(document.getElementsByClassName('checkbox'))
+		event.stopPropagation();
+	}
+
+	let hide_button_label = document.createElement("label")
+	hide_button_label.innerHTML = `HIDE ALL`
+
+	hide_button.appendChild(hide_button_label)
+	document.getElementById("buttons").appendChild(hide_button)
+	// CHECKBOXES ADDING, PART 3/3
 
 
 	// CREDITS
@@ -305,6 +338,18 @@ function createWebpage() {
 	document.getElementById("center").appendChild(footer)
 	// CREDITS
 
+}
+
+function check(checkboxes) {
+	for (let i = 0; i < checkboxes.length; i++) {
+		if (!checkboxes[i].firstElementChild.checked) {checkboxes[i].lastElementChild.click()}
+	}
+}
+
+function uncheck(checkboxes) {
+	for (let i = 0; i < checkboxes.length; i++) {
+		if (checkboxes[i].firstElementChild.checked) {checkboxes[i].lastElementChild.click()}
+	}
 }
 
 

@@ -366,3 +366,5 @@ function sortRoles(roles, user_roles) {
 	return arr
 }
 // SORTING ROLES OF A USER
+
+console.log("Let's all love Lain!")

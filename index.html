@@ -28,13 +28,24 @@
 				}
 			}
 		</script>
+		<script type="text/javascript">
+			function hideShowNavbar() {
+				if (document.getElementById('nav_bar').style.display == 'none') {
+					document.getElementById('nav_bar').style.display = 'table'
+					if (window.innerWidth > 400) document.getElementById('nav_bar_toggle').style.marginLeft = "300px"
+				} else {
+					document.getElementById('nav_bar').style.display = 'none'
+					document.getElementById('nav_bar_toggle').style.marginLeft = "0px"
+				}
+			}
+		</script>
 	</head>
 	<body onload="createWebpage()">
 		<div id="left">
-			<div id="nav_bar_toggle" onclick="document.getElementById('nav_bar').style.display = 'table'">
+			<div id="nav_bar_toggle" onclick="hideShowNavbar()">
 				<p>options</p>
 			</div>
-			<table id="nav_bar" width="100%">
+			<table id="nav_bar" style="display: none;">
 				<tbody>
 					<tr id="stats"></tr>
 					<tr id="checkboxes" onchange="dealWithCards()"></tr>
@@ -42,9 +53,7 @@
 				</tbody>
 			</table>
 			<script type="text/javascript">
-				document.getElementById('nav_bar').onclick = function() {
-					document.getElementById('nav_bar').style.display = 'none'
-				}
+				document.getElementById('nav_bar').onclick = hideShowNavbar
 			</script>
 		</div>
 		<div id="center">

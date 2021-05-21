@@ -406,7 +406,6 @@ function createWebpage() {
 	for (let i = 0; i < users.length; i++) {
 		for (let e = 0; e < users[i].roles.length; e++) {
 			let role = users[i].roles[e]
-			console.log(users[i].username, role)
 			let paragraph = document.getElementById(`${role}_counter`)
 			paragraph.innerHTML = `${paragraph.innerHTML.slice(0, -2)} ${Number(paragraph.innerHTML.slice(-2)) + 1}`
 		}

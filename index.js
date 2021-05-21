@@ -184,7 +184,7 @@ function createWebpage() {
 			]
 		},
 		{
-			"username": "Yhuan Debeste", "id": "13205755", "country": "CA",
+			"username": "Potato9756", "id": "13205755", "country": "CA",
 			"roles": [
 				"referee",
 				"playtester"
@@ -406,10 +406,9 @@ function createWebpage() {
 	for (let i = 0; i < users.length; i++) {
 		for (let e = 0; e < users[i].roles.length; e++) {
 			let role = users[i].roles[e]
+			console.log(users[i].username, role)
 			let paragraph = document.getElementById(`${role}_counter`)
-			let count = Number(paragraph.innerHTML.slice(-1))
-			count++
-			paragraph.innerHTML = `${paragraph.innerHTML.slice(0, -2)} ${count}`
+			paragraph.innerHTML = `${paragraph.innerHTML.slice(0, -2)} ${Number(paragraph.innerHTML.slice(-2)) + 1}`
 		}
 	}
 	// STATS ADDING, PART 3/3

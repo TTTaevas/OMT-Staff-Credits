@@ -224,6 +224,9 @@ table a {
 	#nav_bar_toggle {
 		top: 17%;
 	}
+	.username {
+		margin-right: 0px;
+	}
 }
 
 @media screen and (max-width: 374px) {

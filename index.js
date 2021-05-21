@@ -12,7 +12,7 @@ function createWebpage() {
 		{"name": "playtester", "color": "#3D85C6", "users": []}
 	]
 
-	const users = [
+	let users = [
 		{
 			"username": "Orange_", "id": "14272323", "country": "US",
 			"roles": [
@@ -105,6 +105,15 @@ function createWebpage() {
 		{
 			"username": "Geag", "id": "16052525", "country": "US",
 			"roles": [
+				"commentator",
+				"playtester"
+			]
+		},
+		{
+			"username": "_webis", "id": "19157442", "country": "PL",
+			"roles": [
+				"pooler",
+				"referee",
 				"commentator",
 				"playtester"
 			]
@@ -218,21 +227,16 @@ function createWebpage() {
 			"roles": [
 				"playtester"
 			]
-		},
-		{
-			"username": "_webis", "id": "19157442", "country": "PL",
-			"roles": [
-				"pooler",
-				"referee",
-				"commentator",
-				"playtester"
-			]
-		},
+		}
 	]
 	// YOU CAN MODIFY THE STUFF ABOVE
 
 
 	// CARD SORTING
+	users.sort((a, b) => {
+		return a.roles.length - b.roles.length
+	}).reverse()
+
 	for (let i = 0; i < users.length; i++) {
 		for (let e = 0; e < roles.length; e++) {
 			for (let o = 0; o < users[i].roles.length; o++) {

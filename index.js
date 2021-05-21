@@ -38,21 +38,24 @@ function createWebpage() {
 		{
 			"username": "YesImSatan", "id": "14373729", "country": "SK",
 			"roles": [
-				"streamer"
+				"referee",
+				"commentator"
 			]
 		},
 		{
 			"username": "dahammer88", "id": "10733055", "country": "CA",
 			"roles": [
 				"referee",
-				"pooler"
+				"pooler",
+				"playtester"
 			]
 		},
 		{
 			"username": "TipanLogic", "id": "11720624", "country": "RU",
 			"roles": [
 				"streamer",
-				"referee"
+				"referee",
+				"playtester"
 			]
 		},
 		{
@@ -60,14 +63,16 @@ function createWebpage() {
 			"roles": [
 				"pooler",
 				"referee",
-				"commentator"
+				"commentator",
+				"playtester"
 			]
 		},
 		{
 			"username": "- Elias -", "id": "12865368", "country": "PH",
 			"roles": [
 				"streamer",
-				"referee"
+				"referee",
+				"playtester"
 			]
 		},
 		{
@@ -93,13 +98,15 @@ function createWebpage() {
 		{
 			"username": "EL2G3", "id": "8616507", "country": "PH",
 			"roles": [
-				"commentator"
+				"commentator",
+				"playtester"
 			]
 		},
 		{
 			"username": "Geag", "id": "16052525", "country": "US",
 			"roles": [
-				"commentator"
+				"commentator",
+				"playtester"
 			]
 		},
 		{
@@ -130,7 +137,97 @@ function createWebpage() {
 			"roles": [
 				"referee"
 			]
-		}
+		},
+		{
+			"username": "Vincent A", "id": "11050632", "country": "ID",
+			"roles": [
+				"admin",
+				"pooler",
+				"referee",
+				"commentator"
+			]
+		},
+		{
+			"username": "GarciXD", "id": "13398045", "country": "CL",
+			"roles": [
+				"referee"
+			]
+		},
+		{
+			"username": "MentalMoose", "id": "14262486", "country": "BE",
+			"roles": [
+				"commentator",
+				"playtester"
+			]
+		},
+		{
+			"username": "Pipuuko", "id": "8446047", "country": "US",
+			"roles": [
+				"pooler",
+				"playtester"
+			]
+		},
+		{
+			"username": "Yhuan Debeste", "id": "18704162", "country": "PH",
+			"roles": [
+				"pooler",
+				"referee"
+			]
+		},
+		{
+			"username": "Yhuan Debeste", "id": "13205755", "country": "CA",
+			"roles": [
+				"referee",
+				"playtester"
+			]
+		},
+		{
+			"username": "DewaYoGamer", "id": "11665488", "country": "ID",
+			"roles": [
+				"referee"
+			]
+		},
+		{
+			"username": "Barack", "id": "9402889", "country": "CL",
+			"roles": [
+				"playtester"
+			]
+		},
+		{
+			"username": "hubbawubba", "id": "15910288", "country": "US",
+			"roles": [
+				"commentator",
+				"playtester"
+			]
+		},
+		{
+			"username": "Rekunan", "id": "8203119", "country": "US",
+			"roles": [
+				"referee"
+			]
+		},
+		{
+			"username": "chels", "id": "13968504", "country": "CA",
+			"roles": [
+				"referee",
+				"playtester"
+			]
+		},
+		{
+			"username": "Jinsoul", "id": "3552505", "country": "US",
+			"roles": [
+				"playtester"
+			]
+		},
+		{
+			"username": "_webis", "id": "19157442", "country": "PL",
+			"roles": [
+				"pooler",
+				"referee",
+				"commentator",
+				"playtester"
+			]
+		},
 	]
 	// YOU CAN MODIFY THE STUFF ABOVE
 

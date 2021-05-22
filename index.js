@@ -152,6 +152,7 @@ function createWebpage() {
 			"roles": [
 				"admin",
 				"pooler",
+				"playtester",
 				"referee",
 				"commentator"
 			]

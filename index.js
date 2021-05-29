@@ -5,6 +5,7 @@ function createWebpage() {
 		{"name": "host", "color": "#271C1C", "users": []},
 		{"name": "admin", "color": "#A64D79", "users": []},
 		{"name": "sheeter", "color": "#E69138", "users": []},
+		{"name": "GFX", "color": "#AA00CC", "users": []},
 		{"name": "pooler", "color": "#3C78D8", "users": []},
 		{"name": "referee", "color": "#6AA84F", "users": []},
 		{"name": "streamer", "color": "#CC0000", "users": []},
@@ -131,7 +132,8 @@ function createWebpage() {
 			"username": "easypeasy123", "id": "9946406", "country": "US",
 			"roles": [
 				"pooler",
-				"referee"
+				"referee",
+				"sheeter"
 			]
 		},
 		{
@@ -152,8 +154,7 @@ function createWebpage() {
 			"roles": [
 				"admin",
 				"pooler",
-				"playtester",
-				"referee",
+				"sheeter",
 				"commentator"
 			]
 		},
@@ -200,7 +201,8 @@ function createWebpage() {
 		{
 			"username": "Barack", "id": "9402889", "country": "CL",
 			"roles": [
-				"playtester"
+				"playtester",
+				"referee"
 			]
 		},
 		{
@@ -227,6 +229,36 @@ function createWebpage() {
 			"username": "Jinsoul", "id": "3552505", "country": "US",
 			"roles": [
 				"playtester"
+			]
+		},
+		{
+			"username": "Jon Naismith", "id": "4863866", "country": "PL",
+			"roles": [
+				"pooler",
+				"commentator",
+				"playtester"
+			]
+		},
+		{
+			"username": "nebuwua", "id": "14729352", "country": "US",
+			"roles": [
+				"referee",
+				"GFX"
+			]
+		},
+		{
+			"username": "SakuyaMyAngel", "id": "12048072", "country": "VN",
+			"roles": [
+				"referee",
+				"pooler",
+				"playtester"
+			]
+		},
+		{
+			"username": "[-Asuna-]", "id": "15854893", "country": "MY",
+			"roles": [
+				"referee",
+				"commentator"
 			]
 		}
 	]

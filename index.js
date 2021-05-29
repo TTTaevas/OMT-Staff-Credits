@@ -3,9 +3,9 @@ function createWebpage() {
 	// YOU CAN MODIFY THE STUFF BELOW
 	const roles = [ // THE VALUE OF "users" MUST BE AN EMPTY ARRAY
 		{"name": "host", "color": "#271C1C", "users": []},
-		{"name": "admin", "color": "#A64D79", "users": []},
+		{"name": "admin", "color": "#800080", "users": []},
 		{"name": "sheeter", "color": "#E69138", "users": []},
-		{"name": "GFX", "color": "#AA00CC", "users": []},
+		{"name": "GFX", "color": "#FFC0CB", "users": []},
 		{"name": "pooler", "color": "#3C78D8", "users": []},
 		{"name": "referee", "color": "#6AA84F", "users": []},
 		{"name": "streamer", "color": "#CC0000", "users": []},
